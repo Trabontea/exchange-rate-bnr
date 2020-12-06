@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let resultSecond;
   let showChangeRateOne; 
   let showChangeRateTwo; 
-  let takeCurrencyName;
 
 
   fetch(url)
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const showResults = () => {
     let multiplier = currency.options[currency.selectedIndex].getAttribute('multiplier');
-    takeCurrencyName = currency.options[currency.selectedIndex].text;
+    let takeCurrencyName = currency.options[currency.selectedIndex].text;
 
     if(!multiplier) {
       calculateRates('1', takeCurrencyName);
@@ -73,20 +72,24 @@ document.addEventListener('DOMContentLoaded', () => {
       calculateRates(multiplier, takeCurrencyName)
     }
 
-    // Show results
-    rateEl.innerText = showChangeRateOne;
-    amountResult.innerText = resultFirst;
-    amountResultTwo.innerText = resultSecond.toFixed(2);
-    currencyName.innerText = takeCurrencyName;
-    sumRon.innerText = showChangeRateTwo;
+    printResults(takeCurrencyName); 
   }
 
-  function calculateRates(multiplier, currencyName) {
-    // takeCurrencyName = currency.options[currency.selectedIndex].text;
-    showChangeRateOne = `1 ${currencyName} = ${(currency.value / multiplier).toFixed(2)} RON`;
-    showChangeRateTwo = `1 RON = ${(1/currency.value).toFixed(4)} ${currencyName}`;
-    resultSecond = amountTwo.value / currency.value * multiplier;
+  // Calculate rates
+const calculateRates = (multiplier, currencyName) => {
+    showChangeRateOne = `1 ${currencyName} = ${(currency.value / multiplier).toFixed(4)} RON`;
+    showChangeRateTwo = `1 RON = ${(1/currency.value * multiplier).toFixed(4)} ${currencyName}`;
     resultFirst = (amount.value * currency.value / multiplier).toFixed(2);
+    resultSecond = (amountTwo.value / currency.value * multiplier).toFixed(2);
+  }
+
+   // Show results
+  const printResults = (takeCurrencyName) => {
+    amountResult.innerText = resultFirst;
+    amountResultTwo.innerText = resultSecond;
+    currencyName.innerText = takeCurrencyName;
+    rateEl.innerText = showChangeRateOne;
+    sumRon.innerText = showChangeRateTwo;
   }
 
   // Event listener
