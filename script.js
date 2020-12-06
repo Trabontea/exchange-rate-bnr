@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create elements on page
   const buildPage = (info) => {
-     //console.log('info', info)
+     // console.log('info', info)
      let name = info.getElementsByTagName('Publisher');
      let date  = info.getElementsByTagName('PublishingDate');
      let rate = info.getElementsByTagName('Rate')
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Create select element with rates
   const createRateSelected = (rate) => {
-    console.log('Rate::', rate)
+    // console.log('Rate::', rate)
     for(let item of rate) {
       let currencyName = item.getAttribute('currency');
       let currencyMultiplier = item.getAttribute('multiplier');
@@ -55,9 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
       let option = document.createElement('option')
       option.textContent = currencyName;
       option.setAttribute('value', currencyValue);
+
       if (item.getAttribute('multiplier')) {
         option.setAttribute('multiplier', currencyMultiplier);
       }
+
       currency.appendChild(option);
     }
   }
@@ -92,7 +94,7 @@ const calculateRates = (multiplier, currencyName) => {
     sumRon.innerText = showChangeRateTwo;
   }
 
-  // Event listener
+  // Event listener input & select
   currency.addEventListener('change', showResults);
   amount.addEventListener('input', showResults);
   amountTwo.addEventListener('input', showResults)
