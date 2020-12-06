@@ -10,8 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const amountTwo = document.querySelector('.js-amount-second'); // input amount 
   let amountResultTwo = document.querySelector('.js-result-second');
   let currencyName = document.querySelector('.js-currency-name');
+  let resultFirst;
+  let resultSecond;
+  let showChangeRateOne; 
+  let showChangeRateTwo; 
+  let takeCurrencyName;
 
-  
+
   fetch(url)
   .then(response=>response.text())
   .then(data => {
@@ -31,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
      createSingleElement(name, bankName);
      createSingleElement(date, publishingDate);
      createRateSelected(rate);
-     calculate();
+     showResults();
   }
 
   // Create simple lement
@@ -58,22 +63,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   
-  const calculate = () => {
-    const resultSecond = amountTwo.value / currency.value;
-    let takeCurrencyName = currency.options[currency.selectedIndex].text;
+  const showResults = () => {
+    let multiplier = currency.options[currency.selectedIndex].getAttribute('multiplier');
+    takeCurrencyName = currency.options[currency.selectedIndex].text;
 
-    rateEl.innerText = `1 ${takeCurrencyName} = ${currency.value} RON`;
-    amountResult.innerText = (amount.value * currency.value).toFixed(2);
-  
+    if(!multiplier) {
+      calculateRates('1', takeCurrencyName);
+    } else {
+      calculateRates(multiplier, takeCurrencyName)
+    }
+
+    // Show results
+    rateEl.innerText = showChangeRateOne;
+    amountResult.innerText = resultFirst;
     amountResultTwo.innerText = resultSecond.toFixed(2);
     currencyName.innerText = takeCurrencyName;
-    sumRon.innerText = `1 RON = ${(1/currency.value).toFixed(4)} ${takeCurrencyName}`
+    sumRon.innerText = showChangeRateTwo;
   }
 
+  function calculateRates(multiplier, currencyName) {
+    // takeCurrencyName = currency.options[currency.selectedIndex].text;
+    showChangeRateOne = `1 ${currencyName} = ${(currency.value / multiplier).toFixed(2)} RON`;
+    showChangeRateTwo = `1 RON = ${(1/currency.value).toFixed(4)} ${currencyName}`;
+    resultSecond = amountTwo.value / currency.value * multiplier;
+    resultFirst = (amount.value * currency.value / multiplier).toFixed(2);
+  }
 
   // Event listener
-  currency.addEventListener('change', calculate);
-  amount.addEventListener('input', calculate);
-  amountTwo.addEventListener('input', calculate)
+  currency.addEventListener('change', showResults);
+  amount.addEventListener('input', showResults);
+  amountTwo.addEventListener('input', showResults)
 });
 
