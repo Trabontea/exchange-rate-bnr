@@ -1,3 +1,5 @@
+import {translate} from '/data.js'
+
 document.addEventListener('DOMContentLoaded', () => {
   let url = "https://www.bnro.ro/nbrfxrates.xml";
   const bankName = 'js-bank';
@@ -14,8 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let resultSecond;
   let showChangeRateOne; 
   let showChangeRateTwo; 
-
-
+  let currencyFullName = document.querySelector('.js-currency-full-name');
+  let takeCurencyFullName;
+  
   fetch(url)
   .then(response=>response.text())
   .then(data => {
@@ -52,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let currencyName = item.getAttribute('currency');
       let currencyMultiplier = item.getAttribute('multiplier');
       let currencyValue = item.textContent;
-      let option = document.createElement('option')
+      let option = document.createElement('option');
       option.textContent = currencyName;
       option.setAttribute('value', currencyValue);
 
@@ -73,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       calculateRates(multiplier, takeCurrencyName)
     }
-
+    showfullNameCurrency(takeCurrencyName);
     printResults(takeCurrencyName); 
   }
 
@@ -92,6 +95,16 @@ const calculateRates = (multiplier, currencyName) => {
     currencyName.innerText = takeCurrencyName;
     rateEl.innerText = showChangeRateOne;
     sumRon.innerText = showChangeRateTwo;
+    currencyFullName.innerText = takeCurencyFullName
+  }
+
+  // Show currency full name
+  const showfullNameCurrency = (takeName) =>{
+    translate.map((item) => {
+      if(item.currency === takeName) {
+        takeCurencyFullName = item.name
+      }
+    })
   }
 
   // Event listener input & select
@@ -99,4 +112,3 @@ const calculateRates = (multiplier, currencyName) => {
   amount.addEventListener('input', showResults);
   amountTwo.addEventListener('input', showResults)
 });
-

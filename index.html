@@ -18,12 +18,18 @@
   <div class="container">
     <div class="main">
       <h2 class="orig-currency">Origin Currency: RON</h2>
+     
       <div class="rate-list">
         <label class="text">Choose the currency:</label> 
+        
         <select name="rate" id="select-curency" class="js-rate-list"></select>
       </div>
-      
 
+      <div class="currency-full-name text">
+        <span class="currency-title">Currency name:</span>
+        <span class="text-bold js-currency-full-name"></span>         
+      </div>
+     
       <div class="content">
         <div class="left">
           <div class="currency-rate js-rate text"></div>
@@ -57,6 +63,7 @@
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
+  <script src="data.js" type="module"></script>
 </body>
 </html>   
