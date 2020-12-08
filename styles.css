@@ -1,0 +1,279 @@
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap");
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-family: "Manjari", sans-serif;
+  background-color: #dfe0e5;
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%239aa5bb' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0px 40px;
+}
+
+.main {
+  margin-top: 20px;
+  padding: 40px 0;
+  background-color: rgb(218, 189, 167, 0.86);
+  -webkit-box-shadow: -2px 1px 12px 2px rgba(115, 92, 33, 1);
+  -moz-box-shadow: -2px 1px 12px 2px rgba(115, 92, 33, 1);
+  box-shadow: -2px 1px 12px 2px rgba(115, 92, 33, 1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e04a21f2;
+  padding: 10px 20px;
+  font-size: 26px;
+  line-height: 1.3;
+}
+
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 30px;
+}
+
+.orig-currency {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.rate-list {
+  max-width: 340px;
+  margin: 10px auto 0 auto;
+}
+
+.rate-list label {
+  margin-right: 20px;
+}
+
+.currency-rate {
+  /* display: flex;
+  align-items: center; */
+}
+
+.text {
+  font-size: 22px;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.enter-sum {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.enter-sum label {
+  margin-right: 20px;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+.result-sum {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 1100px) {
+  .content {
+    flex-direction: column;
+  }
+  .right {
+    margin-top: 40px;
+  }
+}
+
+.currency-full-name {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.left,
+.right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rate-list select {
+  padding: 10px 20px 10px 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #dedede;
+  font-size: 20px;
+  background: transparent;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-position: right 10px top 50%, 0, 0;
+  background-size: 11px auto, 100%;
+  background-repeat: no-repeat;
+  width: 100px;
+}
+
+.enter-sum input {
+  border: 0;
+  border-bottom: 1px solid #1f1d1d;
+  background: #fff4f47a;
+  font-size: 20px;
+  text-align: right;
+  width: 140px;
+  padding-right: 5px;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
