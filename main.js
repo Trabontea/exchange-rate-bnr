@@ -1,4 +1,4 @@
-import {translate} from '/data.js'
+import {translate} from '/data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   let url = "https://www.bnro.ro/nbrfxrates.xml";
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let xml = parser.parseFromString(data, "application/xhtml+xml")
    // console.dir(xml)
     buildPage(xml)
-  })
+  });
 
   // Create elements on page
   const buildPage = (info) => {
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let item of collection) {
       document.querySelector(`.${element}`).innerHTML = item.innerHTML;
     }
-  }
+  };
 
   // Create select element with rates
   const createRateSelected = (rate) => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       currency.appendChild(option);
     }
-  }
+  };
   
   const showResults = () => {
     let multiplier = currency.options[currency.selectedIndex].getAttribute('multiplier');
@@ -86,7 +86,7 @@ const calculateRates = (multiplier, currencyName) => {
     showChangeRateTwo = `1 RON = ${(1/currency.value * multiplier).toFixed(4)} ${currencyName}`;
     resultFirst = (amount.value * currency.value / multiplier).toFixed(2);
     resultSecond = (amountTwo.value / currency.value * multiplier).toFixed(2);
-  }
+  };
 
    // Show results
   const printResults = (takeCurrencyName) => {

@@ -1,4 +1,4 @@
-import {translate} from '/data.js'
+import {translate} from '/data.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   let url = "https://www.bnro.ro/nbrfxrates.xml";
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let xml = parser.parseFromString(data, "application/xhtml+xml")
    // console.dir(xml)
     buildPage(xml)
-  })
+  });
 
   // Create elements on page
   const buildPage = (info) => {
