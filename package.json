@@ -1,0 +1,24 @@
+{
+  "name": "take-exchange-rate-from-bnr",
+  "version": "1.0.0",
+  "description": "Tke data from https://www.bnro.ro/nbrfxrates.xml",
+  "main": "data.js",
+  "dependencies": {
+    "gh-pages": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trabontea/exchange-rate-bnr.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trabontea/exchange-rate-bnr/issues"
+  },
+  "homepage": "https://github.com/Trabontea/exchange-rate-bnr"
+}

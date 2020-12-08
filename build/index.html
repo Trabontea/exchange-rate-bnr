@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exchange rater from BNR</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="js-bank"></div>    
+    <div class="publishing-date">
+      <span>Date : </span>
+      <span class="js-publishing-date"></span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="main">
+      <h2 class="orig-currency">Origin Currency: RON</h2>
+     
+      <div class="rate-list">
+        <label class="text">Choose the currency:</label> 
+        
+        <select name="rate" id="select-curency" class="js-rate-list"></select>
+      </div>
+
+      <div class="currency-full-name text">
+        <span class="currency-title">Currency name:</span>
+        <span class="text-bold js-currency-full-name"></span>         
+      </div>
+     
+      <div class="content">
+        <div class="left">
+          <div class="currency-rate js-rate text"></div>
+        
+          <div class="enter-sum">
+            <label class="text">Enter the sum:</label> 
+            <input type="number" class="amount js-amount text" placeholder="0" value="1" min="1" step="1"/>
+          </div>
+      
+          <div class="result text">
+            <span class="result-sum">Result :</span>
+            <span class="js-result text-bold"></span>
+            <span class="text text-bold"> RON</span>
+          </div>
+        </div>
+
+        <div class="right">
+          <div class="js-ron text"></div>
+
+          <div class="enter-sum">
+            <label class="text">Enter the sum in RON: </label> 
+            <input type="number" class="amount js-amount-second text" placeholder="0" value="1" min="1" step="1" />
+          </div>
+
+          <div class="result text">
+            <span class="result-sum">Result : </span>
+            <span class="js-result-second text-bold"></span>
+            <span class="js-currency-name text-bold"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js" type="module"></script>
+  <script src="data.js" type="module"></script>
+</body>
+</html>   
